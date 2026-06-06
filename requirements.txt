@@ -17,3 +17,6 @@ pandas
 openpyxl
 sentence-transformers
 python-docx
+
+langchain-huggingface
+langchain-chroma
