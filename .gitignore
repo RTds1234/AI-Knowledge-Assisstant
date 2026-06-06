@@ -1,0 +1,22 @@
+# Virtual Environment
+venv/
+
+# API Keys
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Chroma Database
+chroma_db/
+
+# Uploaded Files
+uploads/
+
+# Streamlit
+.streamlit/
+
+# OS Files
+.DS_Store
+Thumbs.db
