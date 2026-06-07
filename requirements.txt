@@ -8,7 +8,12 @@ langchain-chroma
 
 chromadb==1.0.15
 
-sentence-transformers
+sentence-transformers==3.0.1
+transformers==4.44.2
+huggingface-hub==0.24.6
+
+torch==2.4.1
+torchvision==0.19.1
 
 pypdf==5.8.0
 
@@ -19,5 +24,3 @@ python-docx
 
 pandas
 openpyxl
-torch==2.4.1
-torchvision==0.19.1
