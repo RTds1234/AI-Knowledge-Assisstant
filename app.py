@@ -66,13 +66,19 @@ with st.sidebar:
 
 for msg in st.session_state.messages:
 
-    with st.chat_message(
-        msg["role"]
-    ):
+    with st.chat_message(msg["role"]):
 
-        st.markdown(
-            msg["content"]
-        )
+        st.markdown(msg["content"])
+
+        if (
+            msg["role"] == "assistant"
+            and "sources" in msg
+        ):
+
+            st.markdown("### Sources")
+
+            for source in msg["sources"]:
+                st.markdown(f"- {source}")
 
 
 question = st.chat_input(
@@ -92,9 +98,9 @@ if question:
 
         st.markdown(question)
 
-    answer, sources = ask_question(
-        question,
-        st.session_state.messages
+    answer, sources, rewritten_question = ask_question(
+    question,
+    st.session_state.messages
     )
 
     source_text = "\n\n### Sources\n"
@@ -111,10 +117,11 @@ if question:
     )
 
     st.session_state.messages.append(
-        {
-            "role":"assistant",
-            "content":final_answer
-        }
+    {
+        "role": "assistant",
+        "content": answer,
+        "sources": sources
+    }
     )
 
     with st.chat_message(

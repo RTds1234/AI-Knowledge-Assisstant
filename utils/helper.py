@@ -114,6 +114,11 @@ def process_files(uploaded_files):
     
     chunks=splitter.split_documents(all_docs)
     db.add_documents(chunks)
+    try:
+        
+        db.persist()
+    except:
+        pass
     return len(chunks)
 
 
@@ -125,28 +130,21 @@ def rewrite_question(question, history_text):
     llm = get_llm()
 
     rewrite_prompt = f"""
+    
 You are a query rewriting assistant.
 
-Your job is to convert the user's latest
-question into a standalone question.
+Convert the latest question into a complete standalone question.
 
-Examples:
-
-History:
-user: What is Machine Learning?
-
-Question:
-Can you elaborate it?
-
-Standalone Question:
-Can you elaborate on Machine Learning?
-
-------------------------
+Rules:
+- Use chat history for context.
+- If the question already makes sense, return it unchanged.
+- Do not answer the question.
+- Return only the rewritten question.
 
 History:
 {history_text}
 
-Question:
+Latest Question:
 {question}
 
 Standalone Question:
@@ -176,12 +174,18 @@ def ask_question(
 
     history_text = ""
 
-    for msg in chat_history[-6:]:
+    # Exclude current question
+    history_messages = chat_history[:-1]
+
+    for msg in history_messages[-6:]:
 
         history_text += (
             f"{msg['role']}: "
             f"{msg['content']}\n"
         )
+
+    print("\n===== CHAT HISTORY =====")
+    print(history_text)
 
     # ======================
     # Rewrite question
@@ -223,20 +227,19 @@ def ask_question(
     prompt = f"""
 You are a helpful AI Assistant.
 
-Use ONLY the provided context.
+Answer ONLY from the supplied context.
 
-If answer is unavailable say:
+If the answer is not present in the context, reply exactly:
 
 Information not found in uploaded documents.
-
-Conversation:
-{history_text}
 
 Context:
 {context}
 
 Question:
 {standalone_question}
+
+Answer:
 """
 
     llm = get_llm()
@@ -287,5 +290,6 @@ Question:
 
     return (
         response.content,
-        sources
+        sources,
+        standalone_question
     )
