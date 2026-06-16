@@ -18,6 +18,7 @@ An AI-powered Knowledge Assistant that enables users to upload documents and ask
 - DOCX
 - TXT
 - CSV
+- Markdown
 
 ✅ Intelligent Question Answering
 
