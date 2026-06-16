@@ -9,7 +9,7 @@ https://github.com/user-attachments/assets/6696cd56-62b4-4e90-a8a2-716d041c280f
 
 # AI Knowledge Assistant
 
-An AI-powered Knowledge Assistant that enables users to upload documents and ask questions in natural language. The system uses Retrieval-Augmented Generation (RAG) to retrieve relevant information from uploaded documents and generate accurate answers based on document content.
+An AI-powered Knowledge Assistant that enables users to upload multiple documents and ask questions in natural language. The system uses Retrieval-Augmented Generation (RAG) to retrieve relevant information from uploaded documents and generate accurate answers based on document content and also save history chat.
 
 ## Features
 
