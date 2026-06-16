@@ -1,47 +1,79 @@
-# Universal Knowledge Assistant
+## Demo Video
+(Add YouTube Link Here)
 
-A Multi-Document Conversational RAG System built using:
 
-- LangChain
-- Gemini 2.5 Flash
-- ChromaDB
-- HuggingFace Embeddings
-- Streamlit
+
+# AI Knowledge Assistant
+
+An AI-powered Knowledge Assistant that enables users to upload documents and ask questions in natural language. The system uses Retrieval-Augmented Generation (RAG) to retrieve relevant information from uploaded documents and generate accurate answers based on document content.
 
 ## Features
 
-- PDF Support
-- TXT Support
-- DOCX Support
-- CSV Support
-- Markdown Support
-- Source Citations
-- Conversational Chat
-- Query Rewriting
-- Chroma Vector Database
+✅ Upload multiple document formats
+- PDF
+- DOCX
+- TXT
+- CSV
 
-## Installation
+✅ Intelligent Question Answering
 
-```bash
-pip install -r requirements.txt
-```
+✅ Semantic Search using Vector Embeddings
 
-Create `.env`
+✅ Source Citation Display
 
-```env
-GOOGLE_API_KEY=your_api_key
-```
+✅ Retrieval-Augmented Generation (RAG)
 
-Run:
+✅ User-Friendly Streamlit Interface
 
-```bash
-streamlit run app.py
-```
+## How It Works
+
+1. User uploads documents.
+2. Documents are processed and split into chunks.
+3. Chunks are converted into vector embeddings.
+4. Embeddings are stored in ChromaDB.
+5. User asks a question.
+6. Relevant chunks are retrieved.
+7. Gemini generates an answer using retrieved context.
+8. Sources used for the answer are displayed.
 
 ## Tech Stack
 
 - Python
-- LangChain
-- ChromaDB
-- Gemini
 - Streamlit
+- LangChain
+- Google Gemini API
+- HuggingFace Embeddings
+- ChromaDB
+- RAG Architecture
+
+## Project Structure
+
+AI-Knowledge-Assistant/
+│
+├── app.py
+├── requirements.txt
+├── uploads/
+├── chroma_db/
+├── README.md
+└── assets/
+
+## Installation
+
+pip install -r requirements.txt
+
+## Run
+
+streamlit run app.py
+
+## Future Enhancements
+
+- Conversation Memory
+- Multi-Document Comparison
+- Voice Input
+- Document Summarization
+- Hybrid Search
+- Authentication System
+
+## Screenshots
+
+(Add screenshots here)
