@@ -1,5 +1,5 @@
 ## Demo Video
-(Add YouTube Link Here)
+
 
 
 
@@ -75,4 +75,5 @@ streamlit run app.py
 - Authentication System
 
 ## Screenshots
-(ai knowledge assisstant.jpg)
+<img width="1917" height="901" alt="ai knowledge assisstant" src="https://github.com/user-attachments/assets/69b8bc39-079a-4e9c-8c79-90f7d1d8641a" />
+
