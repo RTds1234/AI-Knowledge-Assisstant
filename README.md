@@ -57,6 +57,8 @@ AI-Knowledge-Assistant/
 
 ├──app.py
 
+├──helper.py
+
 ├── requirements.txt
 
 ├── chroma_db/
