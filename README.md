@@ -1,5 +1,9 @@
 ## Demo Video
-https://github.com/RTds1234/AI-Knowledge-Assisstant/blob/main/ai%20assisstant4.mp4
+https://github.com/user-attachments/assets/6696cd56-62b4-4e90-a8a2-716d041c280f
+
+
+
+
 
 
 
@@ -50,12 +54,15 @@ An AI-powered Knowledge Assistant that enables users to upload documents and ask
 
 AI-Knowledge-Assistant/
 │
-├── app.py
+
+├──app.py
+
 ├── requirements.txt
-├── uploads/
+
 ├── chroma_db/
+
 ├── README.md
-└── assets/
+
 
 ## Installation
 
