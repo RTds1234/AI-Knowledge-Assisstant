@@ -75,5 +75,4 @@ streamlit run app.py
 - Authentication System
 
 ## Screenshots
-
-(Add screenshots here)
+https://github.com/RTds1234/AI-Knowledge-Assisstant/blob/main/ai%20knowledge%20assisstant.jpg
